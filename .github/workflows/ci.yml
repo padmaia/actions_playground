@@ -1,9 +1,5 @@
-on:
+on: 
   workflow_dispatch:
-    inputs:
-      huh:
-        required: false
-        default: 'what'
   pull_request:
     types: [opened, synchronize]
 
