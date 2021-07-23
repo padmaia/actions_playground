@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo woot
-        if: env.GITHUB_EVENT_NAME == 'workflow_dispatch'
+        if: ${{ env.GITHUB_EVENT_NAME }} == 'workflow_dispatch'
