@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
     inputs:
       huh:
-        required: true
+        required: false
         default: 'what'
   pull_request:
     types: [opened, synchronize]
