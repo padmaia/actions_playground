@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+    inputs:
+      huh:
+        required: true
+        default: 'what'
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $GITHUB_EVENT_NAME
+      - run: echo ${{ github.event.inputs.huh }}
