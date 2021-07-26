@@ -13,11 +13,13 @@ jobs:
   hmm:
     runs-on: ubuntu-latest
     steps:
-      - run: echo woot
-        if: ${{ env.GITHUB_EVENT_NAME }} == 'workflow_dispatch'
+      - if: ${{ env.GITHUB_EVENT_NAME }} == 'workflow_dispatch'
+        run: echo woot
+        
 
   okay:
     runs-on: ubuntu-latest
     steps:
-      - run: echo otaay
-        if: ${{ env.GITHUB_EVENT_NAME }} == 'pull_request'
+      - if: ${{ env.GITHUB_EVENT_NAME }} == 'pull_request'
+        run: echo otaay
+        
