@@ -15,3 +15,9 @@ jobs:
     steps:
       - run: echo woot
         if: ${{ env.GITHUB_EVENT_NAME }} == 'workflow_dispatch'
+
+  okay:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo otaay
+        if: ${{ env.GITHUB_EVENT_NAME }} == 'pull_request'
