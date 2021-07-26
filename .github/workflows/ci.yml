@@ -20,6 +20,7 @@ jobs:
   okay:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ env.GITHUB_EVENT_NAME }} == 'pull_request'
+      - name: Ugh
+        if: ${{ env.GITHUB_EVENT_NAME }} == 'pull_request'
         run: echo otaay
         
