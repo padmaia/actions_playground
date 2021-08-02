@@ -13,7 +13,7 @@ jobs:
   hmm:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ env.GITHUB_EVENT_NAME  == 'workflow_dispatch' }}
+      - if: ${{ github.event_name  == 'workflow_dispatch' }}
         run: echo woot
 
   okay:
