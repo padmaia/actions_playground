@@ -1,4 +1,4 @@
-on: 
+on:
   workflow_dispatch:
   pull_request:
     types: [opened, synchronize]
@@ -13,14 +13,11 @@ jobs:
   hmm:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ env.GITHUB_EVENT_NAME }} == 'workflow_dispatch'
+      - if: ${{ env.GITHUB_EVENT_NAME  == 'workflow_dispatch' }}
         run: echo woot
-        
 
   okay:
+    if: ${{ env.GITHUB_EVENT_NAME  == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo otaay
-        if: ${{ env.GITHUB_EVENT_NAME  == 'pull_request' }} 
-        
-        
