@@ -6,11 +6,17 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
     steps:
       - run: echo $GITHUB_EVENT_NAME
       - run: echo ${{ github.event.inputs.huh }}
+      - id: step1
+        run: echo "::set-output name=test::hello"
 
   hmm:
+    needs: hello
+    if: ${{needs.hello.outputs.output1 == 'hello'}}
     runs-on: ubuntu-latest
     steps:
       - if: ${{ github.event_name  == 'workflow_dispatch' }}
