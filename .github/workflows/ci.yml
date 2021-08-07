@@ -23,7 +23,7 @@ jobs:
         run: echo woot
 
   okay:
+    if: ${{ github.event_name  == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo otaay
-        if: ${{ env.GITHUB_EVENT_NAME  == 'pull_request' }}
