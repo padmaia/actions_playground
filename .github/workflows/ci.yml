@@ -17,6 +17,7 @@ jobs:
       - id: step1
         run: echo "::set-output name=test::hello"
       - run: echo $GITHUB_REF
+      - run: echo $GITHUB_SHA
 
   hmm:
     needs: hello
