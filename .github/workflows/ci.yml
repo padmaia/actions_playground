@@ -23,8 +23,13 @@ jobs:
     if: ${{needs.hello.outputs.output1 == 'hello yo'}}
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ github.event_name  == 'workflow_dispatch' }}
-        run: echo woot
+      - run: echo woot
+
+  letsSee:
+    needs: hmm
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ayyy
 
   okay:
     if: ${{ github.event_name  == 'pull_request' }}
