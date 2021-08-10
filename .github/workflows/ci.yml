@@ -2,6 +2,8 @@ on:
   workflow_dispatch:
   pull_request:
     types: [opened, synchronize]
+  push:
+    branches: [main]
 
 jobs:
   hello:
@@ -13,6 +15,7 @@ jobs:
       - run: echo ${{ github.event.inputs.huh }}
       - id: step1
         run: echo "::set-output name=test::hello"
+      - run: echo $GITHUB_REF
 
   hmm:
     needs: hello
