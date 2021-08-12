@@ -19,6 +19,7 @@ jobs:
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_SHA
       - run: echo "//registry.npmjs.org/:_authToken=$GITHUB_SHA" >> hmm
+      - run: cat hmm
 
   hmm:
     needs: hello
