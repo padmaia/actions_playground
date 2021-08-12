@@ -18,8 +18,20 @@ jobs:
         run: echo "::set-output name=test::hello"
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_SHA
-      - run: echo "//registry.npmjs.org/:_authToken=$GITHUB_SHA" >> hmm
-      - run: cat hmm
+      - uses: actions/cache@v2
+        id: cache-ephemeral
+        with:
+          path: ephemeral
+          key: some-cache-key
+      - name: create ephemeral file
+        if: steps.cache-ephemeral.outputs.cache-hit != 'true'
+        run: echo "yooo" > ephemeral
+
+  aw:
+    runs-on: ubuntu-latest
+    needs: hello
+    steps:
+      - run: exit 1
 
   hmm:
     needs: hello
