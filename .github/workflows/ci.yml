@@ -27,7 +27,7 @@ jobs:
         if: steps.cache-ephemeral.outputs.cache-hit != 'true'
         run: echo "yooo" > ephemeral
       - name: use composite action
-        uses: ./.github/actions/greeting.yml
+        uses: ./.github/actions/greeting
         with:
           who-to-greet: "Gandalf"
 
