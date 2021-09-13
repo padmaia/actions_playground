@@ -26,6 +26,7 @@ jobs:
       - name: create ephemeral file
         if: steps.cache-ephemeral.outputs.cache-hit != 'true'
         run: echo "yooo" > ephemeral
+      - run: ls -a
       - name: use composite action
         uses: ./.github/actions/greeting
         with:
