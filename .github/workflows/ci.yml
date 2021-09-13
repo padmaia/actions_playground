@@ -12,6 +12,7 @@ jobs:
     outputs:
       output1: ${{ steps.step1.outputs.test }}
     steps:
+      - uses: actions/checkout@v2
       - run: echo $GITHUB_EVENT_NAME
       - run: echo ${{ github.event.inputs.huh }}
       - id: step1
