@@ -38,6 +38,7 @@ jobs:
       is-release: ${{ steps.check-release.outputs.is-release }}
     steps:
       - uses: actions/checkout@v2
+      - run: git describe
       - id: check-release
         run: |
           if [[ $(git describe --exact-match 2> /dev/null || :) = v* ]];
