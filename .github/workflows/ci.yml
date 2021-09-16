@@ -51,7 +51,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: checkForReleaseTag
     steps:
+      - run: echo needs.checkForReleaseTag.outputs.is-release
       - run: echo Niiice
+        if: ${{needs.checkForReleaseTag.outputs.is-release == 'true'}}
 
   aw:
     runs-on: ubuntu-latest
