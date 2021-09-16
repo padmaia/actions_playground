@@ -4,7 +4,6 @@ on:
     types: [opened, synchronize]
   push:
     branches: [main]
-    tags: [practice-*]
 
 jobs:
   hello:
@@ -52,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: checkForReleaseTag
     steps:
-      - runs: echo Niiice
+      - run: echo Niiice
 
   aw:
     runs-on: ubuntu-latest
