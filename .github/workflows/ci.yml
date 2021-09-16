@@ -38,8 +38,8 @@ jobs:
       is-release: ${{ steps.check-release.outputs.is-release }}
     steps:
       - uses: actions/checkout@v2
-          with:
-            fetch-depth: 25
+        with:
+          fetch-depth: 25
       - run: git fetch --depth=25 origin +refs/tags/*:refs/tags/*
       - run: git describe
       - id: check-release
