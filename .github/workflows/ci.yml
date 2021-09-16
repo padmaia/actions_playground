@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 25
-      - run: git fetch --depth=25 origin +refs/tags/*:refs/tags/*
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - run: git describe
       - id: check-release
         run: |
