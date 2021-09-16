@@ -47,7 +47,6 @@ jobs:
           fi
 
   depends:
-    if: ${{needs.checkForReleaseTag.outputs.is-release == 'true'}}
     runs-on: ubuntu-latest
     needs: checkForReleaseTag
     steps:
