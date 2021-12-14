@@ -74,9 +74,13 @@ jobs:
 
   letsSee:
     needs: hmm
+    strategy:
+      matrix:
+        node: [10, 12, 14]
     runs-on: ubuntu-latest
     steps:
-      - run: echo ayyy
+      - run: echo ${{ matrix.node }}
+      - run: echo ${{ github.job }}
 
   okay:
     if: ${{ github.event_name  == 'pull_request' }}
