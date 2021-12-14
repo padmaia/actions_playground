@@ -80,6 +80,7 @@ jobs:
     steps:
       - run: echo ${{ matrix.node }}
       - run: echo ${{ github.job }}
+      - run: echo ${{ github.ref_name }}
 
   okay:
     if: ${{ github.event_name  == 'pull_request' }}
