@@ -81,6 +81,9 @@ jobs:
       - run: echo ${{ matrix.node }}
       - run: echo ${{ github.job }}
       - run: echo ${{ github.ref_name }}
+      - id: month
+        run: echo ::set-output name=MONTH::$(date +%U)
+      - run: echo ${{ steps.month.outputs.MONTH }}
 
   okay:
     if: ${{ github.event_name  == 'pull_request' }}
