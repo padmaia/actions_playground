@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - practice
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "yo!"
